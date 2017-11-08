@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceManifest Name="nodeGuestPkg"
+                 Version="1.0.0"
+                 xmlns="http://schemas.microsoft.com/2011/01/fabric"
+                 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ServiceTypes>
+    <!-- Nome del tipo di servizio. 
+         L'attributo UseImplicitHost indica che si tratta di un servizio eseguibile guest. -->
+    <StatelessServiceType ServiceTypeName="nodeGuestType" UseImplicitHost="true" />
+  </ServiceTypes>
+
+  <!-- Il pacchetto di codice corrisponde all'eseguibile del servizio. -->
+  <CodePackage Name="Code" Version="1.0.0">
+    <!-- SetupEntryPoint è un elemento facoltativo usato per specificare un
+         programma da eseguire prima dell'avvio del codice del servizio. -->
+    <!--
+    <SetupEntryPoint>
+      <ExeHost>
+        <Program></Program>
+      </ExeHost>
+    </SetupEntryPoint>
+    -->
+    <EntryPoint>
+      <ExeHost>
+        <Program>node.exe</Program>
+        <Arguments>index.js</Arguments>
+        <WorkingFolder>CodePackage</WorkingFolder>
+        <!-- Rimuovere il commento per registrare l'output della console (sia stdout che
+             stderr) in una delle directory di lavoro del servizio. -->
+        <!-- <ConsoleRedirection FileRetentionCount="5" FileMaxSizeInKb="2048"/> -->
+      </ExeHost>
+    </EntryPoint>
+  </CodePackage>
+
+  <!-- Il pacchetto Config corrisponde al contenuto della directory Config in PackageRoot che contiene 
+       un set con versione e aggiornabile in modo indipendente di impostazioni di configurazione personalizzate per il servizio. -->
+  <ConfigPackage Name="Config" Version="1.0.0" />
+
+  <Resources>
+    <Endpoints>
+      <!-- Questo endpoint viene usato dal listener delle comunicazioni per ottenere la porta 
+           da usare per l'ascolto. Nota: se il servizio è partizionato, questa porta è condivisa 
+           con repliche di partizioni diverse inserite nel codice. -->
+      <Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" Type="Input" />
+    </Endpoints>
+  </Resources>
+</ServiceManifest>

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "serverNodeFabric", "serverNodeFabric\serverNodeFabric.sfproj", "{C1CE501C-1EE4-4326-BCD0-42449BB42118}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1CE501C-1EE4-4326-BCD0-42449BB42118}.Debug|x64.ActiveCfg = Debug|x64
+		{C1CE501C-1EE4-4326-BCD0-42449BB42118}.Debug|x64.Build.0 = Debug|x64
+		{C1CE501C-1EE4-4326-BCD0-42449BB42118}.Debug|x64.Deploy.0 = Debug|x64
+		{C1CE501C-1EE4-4326-BCD0-42449BB42118}.Release|x64.ActiveCfg = Release|x64
+		{C1CE501C-1EE4-4326-BCD0-42449BB42118}.Release|x64.Build.0 = Release|x64
+		{C1CE501C-1EE4-4326-BCD0-42449BB42118}.Release|x64.Deploy.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0AA15FAC-62A2-4648-A35C-E7A79F9F7BF3}
+	EndGlobalSection
+EndGlobal
